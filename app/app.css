@@ -1,15 +1,15 @@
 /* app css stylesheet */
 
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
+
 
 .jumbotron {
     min-height: 300px;
+    background-image: url("img/carnImg1.jpg");
+    background-size: cover;
+    height: 100%;
+
+
 }
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
@@ -18,28 +18,10 @@
   align-items: center;
 }
 
-
-.menu:before {
-  content: "[";
+.mainTitle{
+  color: white ;
 }
 
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
 
 
 
@@ -47,7 +29,7 @@
 .menu-bar {
     position: absolute;
     top: 20px;
-    left: 50%;
+    left: 5%;
     height: 14px;
     margin-left: -10px;
 }
@@ -56,23 +38,27 @@
     display: block;
     width: 20px;
     height: 3px;
-    background-color: #333;
-    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 0 #FFFFFF, 0 10px 0 #FFFFFF;
 }
 
 .menu {
     display: none;
-    width: 100%;
-    padding: 30px 10px 50px;
+    position: absolute;
+    top: 60px;
+    width: 5%;
     margin: 0 auto;
     text-align: center;
-    background-color: #fff;
+
 }
 .menu ul {
     margin-bottom: 0;
+    list-style-type: none;
+
+
 }
 .menu a {
-    color: #333;
+    color: #FFFFFF;
     text-transform: uppercase;
     opacity: 0.8;
 }
