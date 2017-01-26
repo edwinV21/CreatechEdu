@@ -4,11 +4,10 @@ var app = express();
 
 app.use(express.static(__dirname + "/app"));
 
-var loginCtrl = require('./app/controllers/loginCtrl');
-
 var router = express.Router();
+app.use('/api/register', require('./app/controllers/registerCtrl'));
+app.use('/api/login', require('./app/controllers/loginCtrl'));
 
-router.route('/pruebaGet').get(loginCtrl.findUser );
 app.use(router);
 
 app.listen(process.env.PORT || 3000);
