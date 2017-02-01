@@ -1,12 +1,31 @@
 
 module.exports = function(){
   var express = require('express');
+  var bodyParser = require('body-parser')
   var app = express();
-  
-  app.get('/', function(req, res){
-    console.log("revisando");
-    res.send("Login Rest");
+  const pgp =require ('pg-promise')();
+  const db =pgp('postgres://:@localhost/educationdb' );
+  var fs = require("fs");
+  app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+  app.use(bodyParser.json());
+
+  app.post('/', function(req, res){
+      console.log("revisando");
+      console.log(req.body);
+      res.send({ status: 'SUCCESS' });
+      db.any('SELECT * FROM USERS',[true] ).then (function(data) {
+      console.log('data',data[0] );
+      console.log(reviewUsr(3,4) );
+      } );
+
+
   });
 
   return app;
 }();
+
+
+function reviewUsr(a, b) {
+    return a * b;                // Function returns the product of a and b
+}

@@ -12,7 +12,6 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope','$location', function($scope,$location) {
   $scope.register = function() {
       $location.url('/register');
-
     };
 
 
